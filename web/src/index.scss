@@ -1,0 +1,399 @@
+$bg-color: #fdfdfd;
+$theme-colors: (
+	"primary": #fabb66,
+	"secondary": #faddab,
+	"danger": #d8345f,
+	"light":#faf2f2,
+	"dark":#170a19
+);
+$enable-rounded: false;
+
+:root{
+	--cl-zone-1: #1c8e86;
+	--cl-zone-2: var(--success);
+	--cl-zone-3: var(--warning);
+	--cl-zone-4: var(--dngr);
+	--mn-side: 0.5rem;
+	--bg-clr: #f5f5f5;
+	--pg-bar-clr: #57c657;
+}
+
+@import '~react-ilyabirman-likely/dist/styles.css';
+@import '~bootstrap/scss/bootstrap';
+@import './fonts/stylesheet.css';
+
+body{
+	background: var(--bg-clr);
+}
+
+#r{
+	min-height:100vh;
+	font-family: Arial;
+	font-size: 16px;
+	color: #4E4141;
+}
+
+#main{
+	flex-grow: 1;
+	margin: 0.5rem var(--mn-side) 0 var(--mn-side);
+}
+
+.spinner {
+	position: absolute;
+	left: 45%;
+	top: 45%;
+	height:60px;
+	width:60px;
+	margin:0px auto;
+	-webkit-animation: rotation .6s infinite linear;
+	-moz-animation: rotation .6s infinite linear;
+	-o-animation: rotation .6s infinite linear;
+	animation: rotation .6s infinite linear;
+	border-left:6px solid rgba(87, 198, 87,.15);
+	border-right:6px solid rgba(87, 198, 87,.15);
+	border-bottom:6px solid rgba(87, 198, 87,.15);
+	border-top:6px solid rgba(87, 198, 87,.8);
+	border-radius:100%;
+}
+
+@-webkit-keyframes rotation {
+	from {-webkit-transform: rotate(0deg);}
+	to {-webkit-transform: rotate(359deg);}
+}
+@-moz-keyframes rotation {
+	from {-moz-transform: rotate(0deg);}
+	to {-moz-transform: rotate(359deg);}
+}
+@-o-keyframes rotation {
+	from {-o-transform: rotate(0deg);}
+	to {-o-transform: rotate(359deg);}
+}
+@keyframes rotation {
+	from {transform: rotate(0deg);}
+	to {transform: rotate(359deg);}
+}
+
+.progress-bar{
+	background-color: #7dee7d
+}
+
+.navbar{
+	font-weight:500;
+	border-bottom: 1px solid #f3e9e1;
+	background-color: var(--bg-clr);
+}
+
+.nav-v-block{
+	flex-basis:33%;
+	text-align: center;
+	font-size: 0.8rem;
+	a{
+		padding: 0.2em 0.2em 0 0.2em;
+	}
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: FuturaDemi;
+	color: #494949;
+}
+h1{
+	font-size:1.3rem;
+}
+
+a:not(.unstyle){
+	color:rgba(0,0,0,0.6);
+}
+a:active:not(.unstyle), a:hover:not(.unstyle){
+	color:rgba(0,0,0,0.8);
+}
+
+.footer-root{
+	width:100%;
+	height: 1.5em;
+	padding-left: var(--mn-side);
+	overflow:hidden;
+}
+.footer{
+	border-top: 1px solid #f3e9e1;
+	display: flex;
+	height: var(--foot-h);
+}
+@media screen and (min-width: 801px){
+	:root{
+		--mn-side:2vw
+	}
+	.check-title{
+		display: flex;
+		flex-direction: row;
+	}
+}
+@media screen and (max-width: 800px){
+	.check-title{
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+#alerts{
+	position: fixed;
+	float:right;
+	top:90px;
+	right: 10px;
+	min-width: 50em;
+	max-width: 40vw;
+	max-height: 30vw;
+	overflow-y:auto;
+	z-index:9000;
+}
+
+p{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+
+.icon-btn{
+	opacity:0.6;
+	z-index:10;
+	border: none !important;
+	color: inherit;
+	background-color: rgba(0,0,0,0) !important;
+}
+.icon-btn:hover{
+	opacity:0.85;
+}
+
+.link-text{
+	text-decoration: underline;
+	opacity:0.8;
+	cursor:pointer;
+}
+.link-text:hover{
+	opacity:1;
+}
+a:not([href]).link-text{
+	text-decoration: underline;
+}
+
+.problem-text{
+	float:right;
+	text-decoration:none;
+	opacity:0.7;
+	font-size:0.9em;
+	cursor:pointer;
+}
+.problem-text:hover{
+	opacity:0.9;
+}
+
+.form-control.is-invalid{
+	background:inherit;
+}
+.form-control.is-valid{
+	background:inherit;
+}
+
+@media screen and (min-width: 1000px){
+	.simple-page{
+		margin-right:8vw;
+	}
+}
+
+@media screen and (min-width: 1400px){
+	.simple-page{
+		margin-right:16vw;
+	}
+}
+
+@media screen and (min-height: 800px){
+	.simple-page{
+		margin-top:4vh;
+	}
+}
+
+.scroll-thumb{
+	background-color:var(--primary)
+}
+
+.btn-outline-primary{
+	color: #000 !important;
+}
+
+.wh100{
+	width:100%;
+	height:100%
+}
+.wh99{
+	width:calc(100% - 1px);
+	height:calc(100% - 1px);
+}
+
+.flex-col{
+	display: flex;
+	flex-direction: column;
+}
+.flex-row{
+	display: flex;
+	flex-direction: row;
+}
+.flex-row-800-col{
+	display: flex;
+	@media screen and (min-width:800px){
+		flex-direction: row;
+	}
+	@media screen and (max-width:799px){
+		flex-direction: column;
+	}
+}
+
+.personal-side-nav > a.nav-link{
+	color: rgba(0,0,0,0.5);
+	&:hover, &.active{
+		color: rgba(0,0,0,0.8);
+	}
+}
+
+.ps-table{
+	width:100%;
+	tbody{
+		font-size: 0.8em !important;
+	}
+	.real-row{
+		background-color: #fff;
+	}
+	tr:not(.real-row){
+		height:1em;
+	}
+	th{
+		color: rgb(132, 146, 166)
+	}
+	th, td{
+		border-left: none;
+		border-right: none;
+		padding: 1em;
+	}
+	.darker{
+		color:rgb(39, 52, 68);
+	}
+	.lighter{
+		color:rgb(132, 146, 166);
+	}
+}
+
+.text08{
+	font-size: 0.8em;
+}
+
+.ls-org-btn{
+	background-color: rgb(239, 242, 247);
+	border: none;
+	border-radius:1.5em;
+	&:hover,&:active{
+		background-color: #b9cbe0;
+	}
+}
+
+.text-sm{
+	font-size:0.9em;
+	color: rgba(0,0,0,0.7);
+}
+
+.flex-spacing{
+	flex-grow:1
+}
+
+.warning-feedback{
+	width: 100%;
+	padding-top: 0.25rem;
+	font-size: 80%;
+	color: rgb(190,130,5);
+}
+.invalid-feedback {
+}
+.is-invalid ~ div{
+	.invalid-feedback, .warning-feedback{
+		margin-top:0;
+		padding-top:0.25rem;
+		display: block;
+	}
+}
+
+
+.jur-btn{
+	margin-bottom:3px;
+	margin-right:3px;
+	border-radius: 1em;
+}
+.jur-btn:not(:active){
+	background: #D7ECFF;
+	border-color: #D7ECFF;
+}
+.jur-btn:active{
+	background: #FFBB66;
+	border-color: #FFBB66;
+}
+
+.hlr{
+	color: #da561f;
+	background: #fdd;
+}
+
+.hly{
+	color: #e1a800;
+	background: #ffd;
+}
+
+.hlb{
+	color: #00599afa;
+	background: #d7ecff;
+}
+
+.hlg{
+	color: #3c3c3c;
+	background: #abababcc;
+}
+
+#text-preview p{
+	margin-bottom: 2px;
+	margin-top: 0;
+}
+
+.btn-dark-orange{
+	font-size:0.9rem;
+	border: 1px solid #FF8D00;
+	border-radius: 0.8em;
+	background-color: transparent;
+	color: #FF8D00;
+	font-weight: bold;
+}
+.btn-dark-orange:hover, .btn-dark-orange:active{
+	background-color: #FF8D00;
+	color: #ffffff;
+}
+
+.mbsm{
+	margin-bottom: 0.5rem
+}
+
+.chk-results p{
+	margin-top: 0;
+}
+
+.bdg{
+	padding: 0.5em 1em;
+	border-radius: 800px
+}
+
+.bdg-green{
+	background-color: rgb(215, 240, 229);
+	color: rgb(54, 179, 126);
+}
+
+.bdg-yellow{
+	background-color: rgb(255, 238, 204);
+	color: rgb(255, 171, 0);
+}
+
+.bdg-red{
+	background-color: rgb(255, 221, 214);
+	color: rgb(255, 86, 48);
+}
